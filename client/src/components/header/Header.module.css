@@ -1,0 +1,7 @@
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-content: center;
+    margin-right: 3em;
+}
