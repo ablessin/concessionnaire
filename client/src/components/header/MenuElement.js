@@ -39,7 +39,6 @@ export default function MenuElement(props) {
                     })}
                 </Menu>
             ):null}
-
         </div>
     );
 }

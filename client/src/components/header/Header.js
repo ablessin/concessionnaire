@@ -1,16 +1,23 @@
 import React from 'react';
 import MenuElement from './MenuElement';
-import style from './Header.module.css';
+import Style from './Header.module.css';
+import Logo from '../../assets/images/logo.png';
 
 function Header() {
     return (
-        <div className={style.nav}>
-            <MenuElement title={"Accueil"} subTitle={""}/>
-            <MenuElement title={"Achat"} subTitle={["4", "5", "6"]}/>
-            <MenuElement title={"Vente"} subTitle={["7", "8", "9"]}/>
+        <div className={Style.nav}>
+            <div className={Style.navLogo}>
+                <img src={Logo} alt={"logo"}/>
+            </div>
+            <div className={Style.navButtons}>
+                <MenuElement title={"Accueil"} subTitle={""}/>
+                <MenuElement title={"Achat"} subTitle={""}/>
+                <MenuElement title={"Vente"} subTitle={["Estimer ma voiture", "Vendre ma voiture"]}/>
 
-            <MenuElement title={"Connexion"} subTitle={["10", "11", "12"]}/>
+                <MenuElement title={"Connexion"} subTitle={""}/>
+            </div>
         </div>
+
     );
 }
 

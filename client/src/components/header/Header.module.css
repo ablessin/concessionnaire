@@ -1,7 +1,35 @@
 .nav{
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: space-between;
     align-content: center;
-    margin-right: 3em;
+    align-items: center;
+    text-align: center;
+}
+
+.navLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 5em;
+    height: 10vh;
+    width: 50%;
+}
+
+.navLogo img{
+    height: 100%;
+}
+
+.navButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin-right: 5em;
+    height: 5vh;
+    width: 50%;
 }
