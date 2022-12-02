@@ -3,6 +3,34 @@ import MenuElement from './MenuElement';
 import Style from './Header.module.css';
 import Logo from '../../assets/images/logo.png';
 
+const Navigation = [
+    {
+        title: "Accueil",
+        path: "/"
+    },
+    {
+        title: "Achat",
+        path: "/achat"
+    },
+    {
+        title: "Vente",
+        subtitle: [
+            {
+                text: "Estimer ma voiture",
+                path: "/estimer"
+            },
+            {
+                text: "Vendre ma voiture",
+                path: "/vendre"
+            }
+        ]
+    },
+    {
+        title: "Connexion",
+        path: "/connexion"
+    },
+]
+
 function Header() {
     return (
         <div className={Style.nav}>
@@ -10,11 +38,10 @@ function Header() {
                 <img src={Logo} alt={"logo"}/>
             </div>
             <div className={Style.navButtons}>
-                <MenuElement title={"Accueil"} subTitle={""}/>
-                <MenuElement title={"Achat"} subTitle={""}/>
-                <MenuElement title={"Vente"} subTitle={["Estimer ma voiture", "Vendre ma voiture"]}/>
+                {Navigation.map((value, index) => {
+                    return <MenuElement key={index} params={value}/>
+                })}
 
-                <MenuElement title={"Connexion"} subTitle={""}/>
             </div>
         </div>
 
