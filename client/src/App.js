@@ -1,16 +1,14 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/header/Header";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { Button } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 import theme from "./configuration/themes/theme";
+import Router from "./router";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <Header />
-      </div>
+      <Router />
     </ThemeProvider>
   );
 }

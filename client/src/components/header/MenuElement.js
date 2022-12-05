@@ -2,6 +2,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
 
 export default function MenuElement(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -23,9 +24,9 @@ export default function MenuElement(props) {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        {props.title}
+        {props.params.title}
       </Button>
-      {props.subTitle ? (
+      {props.params.subtitle ? (
         <Menu
           id="basic-menu"
           anchorEl={anchorEl}
@@ -35,11 +36,11 @@ export default function MenuElement(props) {
             "aria-labelledby": "basic-button",
           }}
         >
-          {props.subTitle.map((e) => {
+          {props.params.subtitle.map((element, index) => {
             return (
-              <MenuItem key={e} onClick={handleClose}>
-                {e}
-              </MenuItem>
+              <Link key={index} to={element.path}>
+                <MenuItem onClick={handleClose}>{element.text}</MenuItem>
+              </Link>
             );
           })}
         </Menu>
