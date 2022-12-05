@@ -1,5 +1,4 @@
 export default function Home() {
-    return (
-        <h1>Coucou je suis Home</h1>
-    );
+  console.log("home");
+  return <h1>Coucou je suis Home</h1>;
 }

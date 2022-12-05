@@ -37,7 +37,6 @@ export default function MenuElement(props) {
           }}
         >
           {props.params.subtitle.map((element, index) => {
-            console.log("ici", element);
             return (
               <Link key={index} to={element.path}>
                 <MenuItem onClick={handleClose}>{element.text}</MenuItem>
