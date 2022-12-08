@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 // ID et pw à cacher dans des variables d'environnement
 const dbID = process.env.DB_ID;
 const dbPW = process.env.DB_PW;
-const DB = 'mongodb+srv://'+dbID+':'+dbPW+'@cluster0.yh4dmiu.mongodb.net/?retryWrites=true&w=majority';
+const DB = 'mongodb+srv://' + dbID + ':' + dbPW + '@clusterconcession.4pcizui.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
