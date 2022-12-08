@@ -37,7 +37,7 @@ export default function Banner() {
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <img className={Style.blob} src={Blob} alt="décoration de titre" />
-          <h1 className={Style.title}>Bienvenue chez Car Cash</h1>
+          <h1 className={Style.title}>Bienvenue chez car Cash</h1>
           <h2 className={Style.subtitle}>
             Elle est conçue juste pour vous séduire
           </h2>
