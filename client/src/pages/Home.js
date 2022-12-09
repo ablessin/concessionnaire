@@ -1,4 +1,13 @@
-export default function Home() {
+import Banner from "../components/home/Banner";
+import VisiteAchat from "../components/home/VisiteAchat";
+
+function Home() {
   console.log("home");
-  return <h1>Coucou je suis Home</h1>;
+  return (
+    <>
+      <Banner />
+      <VisiteAchat />
+    </>
+  );
 }
+export default Home;

@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Header from "./components/header/Header";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./configuration/themes/theme";
 import Router from "./router";

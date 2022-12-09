@@ -1,0 +1,34 @@
+.blob{
+    position: absolute;
+    top: 3em;
+    left: -5vw;
+    width: 40%;
+    z-index: 0;
+}
+
+.title{
+    color: #FDB721;
+    font-size: 100px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #2F2F2F;
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle{
+    color: #2F2F2F;
+    font-size: 40px;
+    z-index: 1;
+    position: relative;
+}
+
+.bannerimg{
+    width:100%;
+    align-items: center;
+}
+
+.imgachat{
+    width: 100%;
+    height: auto;
+    margin-right: -400px;
+}

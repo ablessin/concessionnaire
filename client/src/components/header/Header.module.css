@@ -5,6 +5,7 @@
     align-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .navLogo{
@@ -32,4 +33,12 @@
     margin-right: 5em;
     height: 5vh;
     width: 50%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navSubitem{
+    color: #2F2F2F;
 }

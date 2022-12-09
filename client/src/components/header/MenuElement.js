@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import Style from "./Header.module.css";
 
 export default function MenuElement(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -39,7 +40,9 @@ export default function MenuElement(props) {
           {props.params.subtitle.map((element, index) => {
             return (
               <Link key={index} to={element.path}>
-                <MenuItem onClick={handleClose}>{element.text}</MenuItem>
+                <MenuItem className={Style.navSubitem} onClick={handleClose}>
+                  {element.text}
+                </MenuItem>
               </Link>
             );
           })}
