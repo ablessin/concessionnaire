@@ -1,5 +1,5 @@
 const http = require('http');
-const port = process.env.PORT || 3000; // Cacher le port
+const port = process.env.PORT; // Cacher le port
 const app = require('./app');
 
 const server = http.createServer(app);
