@@ -2,12 +2,12 @@ import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 
-export default function LoginFormTextField() {
+export default function LoginTextFields() {
     return (
         <Stack
             component="form"
             sx={{
-                width: '25ch',
+                width: '50%',
             }}
             spacing={2}
             noValidate
@@ -18,7 +18,7 @@ export default function LoginFormTextField() {
                     required
                     id="filled-required"
                     label="email"
-                    defaultValue="email"
+                    placeholder={"Saisir"}
                     variant="filled"
                 />
                 <TextField
@@ -26,12 +26,11 @@ export default function LoginFormTextField() {
                     id="outlined-password-input"
                     label="mot de passe"
                     type="password"
-                    autoComplete="current-password"
+                    placeholder={"Saisir"}
                     variant="filled"
+                    autoComplete="current-password"
                 />
             </div>
-
-
         </Stack>
     );
 }
