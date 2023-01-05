@@ -45,6 +45,7 @@
 .commitContainer{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5rem;
 }
 
 .textLeft{
@@ -53,4 +54,36 @@
 
 .homeCard{
     height: 38vh;
+}
+
+.work{
+    width: 20% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: center !important;
+    border-left: solid 1px !important;
+    position: relative;
+}
+
+.workCard{
+    display: flex;
+    align-items: center;
+    background-color: #F5F7FB !important;
+}
+
+.workCard img{
+    height: 8vh !important;
+    padding: 1rem;
+}
+
+.cardSpaces{
+    padding: 2rem;
+    position: relative;
+}
+
+.cardSpaces .ellipse{
+    position: absolute;
+    left: -1.4vh;
+    top: 5rem;
 }

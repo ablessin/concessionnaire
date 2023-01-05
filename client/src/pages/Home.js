@@ -1,6 +1,7 @@
 import Banner from "../components/home/Banner";
 import Benefit from "../components/home/Benefit"
 import Commitmen from "../components/home/Commitmen"
+import HowThatWork from "../components/home/HowThatWork"
 
 
 
@@ -10,6 +11,7 @@ function Home() {
       <Banner />
       <Benefit />
       <Commitmen />
+      <HowThatWork />
     </>
   );
 }
