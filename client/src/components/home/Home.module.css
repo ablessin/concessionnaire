@@ -1,34 +1,38 @@
-.blob{
-    position: absolute;
-    top: 3em;
-    left: -5vw;
-    width: 40%;
-    z-index: 0;
+.banner{
+    background: linear-gradient(286.38deg, rgba(245, 102, 34, 0.6) -5.49%, rgba(125, 21, 56, 0) 158.68%), url('../../assets/images/achatvoiture.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5rem;
 }
 
 .title{
-    color: #FDB721;
-    font-size: 100px;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #2F2F2F;
-    position: relative;
-    z-index: 1;
+    margin: 0;
+    text-align: center;
 }
 
-.subtitle{
-    color: #2F2F2F;
-    font-size: 40px;
-    z-index: 1;
-    position: relative;
+.textBanner{
+    text-align: center;
+    width: 50%;
 }
 
-.bannerimg{
-    width:100%;
-    align-items: center;
+.buttonBanner{
+    border-radius: 10px;
+    margin-bottom: 25px;
 }
 
-.imgachat{
-    width: 100%;
-    height: auto;
-    margin-right: -400px;
+.benefit{
+    background: #F5F7FB;
+    text-align: center;
+}
+
+.benefitContainer{
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
 }

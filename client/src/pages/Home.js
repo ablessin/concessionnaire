@@ -1,12 +1,12 @@
 import Banner from "../components/home/Banner";
-import VisiteAchat from "../components/home/VisiteAchat";
+import Benefit from "../components/home/Benefit"
+
 
 function Home() {
-  console.log("home");
   return (
     <>
       <Banner />
-      <VisiteAchat />
+      <Benefit />
     </>
   );
 }
