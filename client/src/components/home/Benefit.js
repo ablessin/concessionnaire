@@ -4,9 +4,9 @@ import Grid from "@mui/material/Grid";
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Style from "./Home.module.css";
-import Rapide from "../../assets/images/fast.png";
-import Gratuit from "../../assets/images/free.png";
-import SansEngagement from "../../assets/images/locker.png";
+import Rapide from "../../assets/images/home/fast.png";
+import Gratuit from "../../assets/images/home/free.png";
+import SansEngagement from "../../assets/images/home/locker.png";
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -28,14 +28,14 @@ export default function Banner() {
               />
               <p>Rapide</p>
             </Grid>
-            <Grid xs={12} md={4}>
+            <Grid item xs={12} md={4}>
               <img
                   src={Gratuit}
                   alt="Image gratuit"
               />
               <p>Gratuit</p>   
             </Grid>
-            <Grid xs={12} md={4}>
+            <Grid item xs={12} md={4}>
               <img
                   src={SansEngagement}
                   alt="Image sans engagement"

@@ -1,5 +1,5 @@
 .banner{
-    background: linear-gradient(286.38deg, rgba(245, 102, 34, 0.6) -5.49%, rgba(125, 21, 56, 0) 158.68%), url('../../assets/images/achatvoiture.jpg');
+    background: linear-gradient(286.38deg, rgba(245, 102, 34, 0.6) -5.49%, rgba(125, 21, 56, 0) 158.68%), url('../../assets/images/home/achatvoiture.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -29,10 +29,28 @@
 .benefit{
     background: #F5F7FB;
     text-align: center;
+    margin-bottom: 5rem;
 }
 
-.benefitContainer{
-    width: 80%;
+.benefitContainer, .commitContainer {
+    width: 80% !important;
     margin: 0 auto;
     padding: 2rem;
+}
+
+.benefitContainer img{
+    height: 15vh;
+}
+
+.commitContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.textLeft{
+    text-align: left !important;
+}
+
+.homeCard{
+    height: 38vh;
 }
