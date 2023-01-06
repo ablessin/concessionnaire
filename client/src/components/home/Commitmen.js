@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import Safe from "../../assets/images/home/safe.png";
 import Transparent from "../../assets/images/home/transparent.png";
 import Respect from "../../assets/images/home/respect.png";
+import Divider from '@mui/material/Divider';
+import { style } from "@mui/system";
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -20,10 +22,13 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Commitmen() {
   return (
-    <>
-        <Typography variant="h2" gutterBottom className={Style.title}> 
-        Nos engagements
-        </Typography>
+    <>  
+        <Box sx={{ flexGrow: 1 }} className={Style.containerDivider}>
+            <Typography variant="h2" gutterBottom className={Style.title}> 
+            Nos engagements
+            </Typography>
+            <div className={Style.divider}></div>
+        </Box>
         <Box sx={{ flexGrow: 1 }}>
             <Grid container className={Style.commitContainer}>
                 <Grid item xs={12} md={3} className={Style.marginBottom}>

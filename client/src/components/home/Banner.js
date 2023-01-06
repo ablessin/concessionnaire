@@ -7,12 +7,13 @@ import Button from '@mui/material/Button';
 
 
 
+
 export default function Banner() {
   return (
     <Box className={Style.banner} padding={{xs:0, md:5}} >
       <Grid className={Style.title}>
       <Typography variant="h1" gutterBottom> 
-      Car Cash Acheter, vender, estimer
+      Car Cash : Acheter, vender, estimer
       </Typography>
       </Grid>
       <Grid className={Style.textBanner}>

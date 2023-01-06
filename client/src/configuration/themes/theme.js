@@ -17,6 +17,7 @@ export const themeOptions = {
     fontFamily: 'Poppins',
     fontSize: 16,
     h1: {
+      color:'#ffffff',
       fontSize: 60,
       fontWeight: 900,
     },

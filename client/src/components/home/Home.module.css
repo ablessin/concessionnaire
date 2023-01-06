@@ -12,6 +12,20 @@
 .paddingZero{
     padding: 0 !important;
 }
+
+/* DIVIDER */
+.divider{
+    width: 10%;
+    text-align: center;
+    border: solid #f4c644;
+}
+.containerDivider{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* DIVIDER */
+
 /* GENERAL CSS */
 
 /* BANNER */
@@ -31,6 +45,10 @@
 .textBanner{
     text-align: center;
     width: 50%;
+    color: #ffffff !important;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 1rem;
 }
 
 .buttonBanner{
@@ -45,15 +63,16 @@
     text-align: center;
     margin-bottom: 5rem;
 }
-
 .benefitContainer, .commitContainer {
     width: 80% !important;
     margin: 0 auto;
     padding: 2rem;
 }
-
 .benefitContainer img{
     height: 15vh;
+}
+.benefitContainer p{
+    font-weight: 600;
 }
 /* BENEFIT */
 
