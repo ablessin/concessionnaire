@@ -1,34 +1,137 @@
-.blob{
-    position: absolute;
-    top: 3em;
-    left: -5vw;
-    width: 40%;
-    z-index: 0;
-}
-
+/* GENERAL CSS */
 .title{
-    color: #FDB721;
-    font-size: 100px;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #2F2F2F;
-    position: relative;
-    z-index: 1;
+    margin: 0;
+    text-align: center;
+}
+.textLeft{
+    text-align: left !important;
+}
+.marginBottom{
+    margin-bottom: 2rem !important;
+}
+.paddingZero{
+    padding: 0 !important;
 }
 
-.subtitle{
-    color: #2F2F2F;
-    font-size: 40px;
-    z-index: 1;
-    position: relative;
+/* DIVIDER */
+.divider{
+    width: 10%;
+    text-align: center;
+    border: solid #f4c644;
 }
-
-.bannerimg{
-    width:100%;
+.containerDivider{
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
+/* DIVIDER */
 
-.imgachat{
-    width: 100%;
-    height: auto;
-    margin-right: -400px;
+/* GENERAL CSS */
+
+/* BANNER */
+.banner{
+    background: linear-gradient(286.38deg, rgba(245, 102, 34, 0.6) -5.49%, rgba(125, 21, 56, 0) 158.68%), url('../../assets/images/home/achatvoiture.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5rem;
 }
+
+.textBanner{
+    text-align: center;
+    width: 50%;
+    color: #ffffff !important;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 1rem;
+}
+
+.buttonBanner{
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+/* BANNER */
+
+/* BENEFIT */
+.benefit{
+    background: #F5F7FB;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.benefitContainer, .commitContainer {
+    width: 80% !important;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.benefitContainer img{
+    height: 15vh;
+}
+.benefitContainer p{
+    font-weight: 600;
+}
+/* BENEFIT */
+
+/* COMMIT */
+.commitContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.homeCard{
+    height: 38vh;
+}
+/* COMMIT */
+
+/* HOW THAT WORK */
+.work{
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: center !important;
+    border-left: solid 1px !important;
+    position: relative;
+}
+
+.workCard{
+    display: flex;
+    align-items: center;
+    background-color: #F5F7FB !important;
+}
+
+.workCard img{
+    height: 8vh !important;
+    padding: 1rem;
+}
+
+.cardSpaces{
+    padding: 2rem;
+    position: relative;
+}
+
+.cardSpaces .ellipse{
+    position: absolute;
+    left: -1.4vh;
+    top: 5rem;
+}
+/* HOW THAT WORK */
+
+/* HOW THAT WORK RESPONSIVE */
+
+@media (min-width: 1250px){
+    .work{
+        width: 20% !important;
+    }
+}
+@media (max-width: 1250px){
+    .work{
+        width: 80% !important;
+    }
+}
+
+/* HOW THAT WORK RESPONSIVE */

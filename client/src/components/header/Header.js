@@ -1,7 +1,7 @@
 import React from "react";
 import MenuElement from "./MenuElement";
 import Style from "./Header.module.css";
-import Logo from "../../assets/images/logo.png";
+import Logo from "../../assets/images/logo/logo.png";
 import { Link, Outlet } from "react-router-dom";
 
 const Navigation = [

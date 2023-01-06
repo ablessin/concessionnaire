@@ -1,55 +1,28 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Lottiecar from "../../assets/images/Lottiecar.json";
-import Blob from "../../assets/images/blob.svg";
+import Typography from '@mui/material/Typography';
 import Style from "./Home.module.css";
-import Lottie from "lottie-react";
+import Button from '@mui/material/Button';
 
-const style = {
-  height: 600,
-};
 
-const interactivity = {
-  mode: "scroll",
-  actions: [
-    {
-      visibility: [0, 0.2],
-      type: "stop",
-      frames: [0],
-    },
-    {
-      visibility: [0.2, 0.45],
-      type: "seek",
-      frames: [0, 20],
-    },
-    {
-      visibility: [0.45, 1.0],
-      type: "loop",
-      frames: [20, 135],
-    },
-  ],
-};
+
 
 export default function Banner() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <img className={Style.blob} src={Blob} alt="décoration de titre" />
-          <h1 className={Style.title}>Bienvenue chez Car Cash</h1>
-          <h2 className={Style.subtitle}>
-            Elle est conçue juste pour vous séduire
-          </h2>
-        </Grid>
-        <Grid item xs={6}>
-          <Lottie
-            animationData={Lottiecar}
-            style={style}
-            interactivity={interactivity}
-          />
-        </Grid>
+    <Box className={Style.banner} padding={{xs:0, md:5}} >
+      <Grid className={Style.title}>
+      <Typography variant="h1" gutterBottom> 
+      Car Cash : Acheter, vender, estimer
+      </Typography>
       </Grid>
+      <Grid className={Style.textBanner}>
+          <p>Car Cash est une entreprise qui a pour objectif de permettre a chaque utilisateur de pouvoir estimer sa voiture, la mettre en vente ou en acheter une nouvelle.
+            L’objectif principale de Car Cash est de faciliter les transactions entre vendeur et acheteur pour des offres automobiles.</p>
+      </Grid>
+      <Box  padding={{xs:2, md:0}}>
+        <Button className={Style.buttonBanner} variant="contained">Estimer sa voiture</Button>
+      </Box>
     </Box>
   );
 }
