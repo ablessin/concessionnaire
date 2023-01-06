@@ -23,7 +23,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function HowThatWork() {
   return (
     <>
-        <Typography variant="h2" gutterBottom className={Style.title}> 
+        <Typography variant="h2" gutterBottom className={[Style.title, Style.marginBottom]}> 
                 Comment ca marche ?
         </Typography>
         <Box sx={{ flexGrow: 1 }}>

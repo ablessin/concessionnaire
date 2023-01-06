@@ -1,3 +1,20 @@
+/* GENERAL CSS */
+.title{
+    margin: 0;
+    text-align: center;
+}
+.textLeft{
+    text-align: left !important;
+}
+.marginBottom{
+    margin-bottom: 2rem !important;
+}
+.paddingZero{
+    padding: 0 !important;
+}
+/* GENERAL CSS */
+
+/* BANNER */
 .banner{
     background: linear-gradient(286.38deg, rgba(245, 102, 34, 0.6) -5.49%, rgba(125, 21, 56, 0) 158.68%), url('../../assets/images/home/achatvoiture.jpg');
     background-repeat: no-repeat;
@@ -11,11 +28,6 @@
     margin-bottom: 5rem;
 }
 
-.title{
-    margin: 0;
-    text-align: center;
-}
-
 .textBanner{
     text-align: center;
     width: 50%;
@@ -25,7 +37,9 @@
     border-radius: 10px;
     margin-bottom: 25px;
 }
+/* BANNER */
 
+/* BENEFIT */
 .benefit{
     background: #F5F7FB;
     text-align: center;
@@ -41,23 +55,22 @@
 .benefitContainer img{
     height: 15vh;
 }
+/* BENEFIT */
 
+/* COMMIT */
 .commitContainer{
     display: flex;
     justify-content: space-between;
     margin-bottom: 5rem;
 }
 
-.textLeft{
-    text-align: left !important;
-}
-
 .homeCard{
     height: 38vh;
 }
+/* COMMIT */
 
+/* HOW THAT WORK */
 .work{
-    width: 20% !important;
     margin: 0 auto !important;
     display: flex !important;
     flex-direction: column !important;
@@ -87,3 +100,19 @@
     left: -1.4vh;
     top: 5rem;
 }
+/* HOW THAT WORK */
+
+/* HOW THAT WORK RESPONSIVE */
+
+@media (min-width: 1250px){
+    .work{
+        width: 20% !important;
+    }
+}
+@media (max-width: 1250px){
+    .work{
+        width: 80% !important;
+    }
+}
+
+/* HOW THAT WORK RESPONSIVE */

@@ -26,7 +26,7 @@ export default function Commitmen() {
         </Typography>
         <Box sx={{ flexGrow: 1 }}>
             <Grid container className={Style.commitContainer}>
-                <Grid item xs={12} md={3}>
+                <Grid item xs={12} md={3} className={Style.marginBottom}>
                     <Item  className={Style.homeCard}>
                         <div className={Style.textLeft}>
                             <img
@@ -43,7 +43,7 @@ export default function Commitmen() {
                         </p>
                     </Item>
                 </Grid>
-                <Grid  item xs={12} md={3} className={Style.homeCard}>
+                <Grid  item xs={12} md={3} className={Style.marginBottom}>
                     <Item  className={Style.homeCard}>
                     <div className={Style.textLeft}>
                         <img
@@ -59,7 +59,7 @@ export default function Commitmen() {
                     </p>
                     </Item>  
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid item xs={12} md={3}  className={Style.marginBottom}>
                     <Item  className={Style.homeCard}>
                     <div className={Style.textLeft}>
                         <img
