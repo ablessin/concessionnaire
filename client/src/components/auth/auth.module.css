@@ -3,3 +3,23 @@
     flex-direction: column;
     align-items: center;
 }
+
+.fieldForm{
+    margin: 0 auto !important;
+    margin-bottom: 2rem !important;
+}
+
+.inputForm{
+    display: flex;
+    width: 50%;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+}
+
+.title h2 {
+    margin: 0 auto !important;
+    margin-bottom: 2rem !important;
+}
