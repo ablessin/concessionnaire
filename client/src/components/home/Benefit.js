@@ -2,9 +2,9 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Style from "./Home.module.css";
-import Rapide from "../../assets/s/home/fast.png";
-import Gratuit from "../../assets/s/home/free.png";
-import SansEngagement from "../../assets/s/home/locker.png";
+import Rapide from "../../assets/images/home/fast.png";
+import Gratuit from "../../assets/images/home/free.png";
+import SansEngagement from "../../assets/images/home/locker.png";
 
 export default function Banner() {
   return (

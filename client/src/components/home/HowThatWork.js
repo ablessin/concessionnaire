@@ -5,11 +5,11 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import Choice from "../../assets/s/home/choice.png";
-import Calendar from "../../assets/s/home/calendar.png";
-import Fast from "../../assets/s/home/fast-estimation 2.png";
-import ImmediateSale from "../../assets/s/home/immediate-sale.png";
-import Ellipse from "../../assets/s/home/Ellipse.png";
+import Choice from "../../assets/images/home/choice.png";
+import Calendar from "../../assets/images/home/calendar.png";
+import Fast from "../../assets/images/home/fast-estimation 2.png";
+import ImmediateSale from "../../assets/images/home/immediate-sale.png";
+import Ellipse from "../../assets/images/home/Ellipse.png";
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
