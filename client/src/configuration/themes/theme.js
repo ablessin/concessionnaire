@@ -9,6 +9,9 @@ export const themeOptions = {
     secondary: {
       main: '#f56622',
     },
+    black: {
+      main: '#2f2f2f',
+    },
     background: {
       default: '#ffffff',
     },
