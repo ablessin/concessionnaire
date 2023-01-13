@@ -1,3 +1,9 @@
+import LoginForm from "../components/auth/LoginForm";
+
 export default function Connexion() {
-  return <h1>Coucou je suis Connexion</h1>;
+  return (
+    <>
+      <LoginForm />
+    </>
+  );
 }
