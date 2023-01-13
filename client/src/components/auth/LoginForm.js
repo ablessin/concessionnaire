@@ -1,12 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import Connect from "../../assets/images/auth/connect.jpg";
+import Style from "./auth.module.css";
+import Button from "@mui/material/Button";
+
 
 export default function FormPropsTextFields() {
   return (
     <>
-        <img src={Connect} alt={"Connect image"} />
         <Box
       component="form"
       sx={{
@@ -14,6 +15,7 @@ export default function FormPropsTextFields() {
       }}
       noValidate
       autoComplete="off"
+      className={Style.formContainer}
     >
         <div>
             <TextField fullWidth
@@ -32,7 +34,10 @@ export default function FormPropsTextFields() {
               autoComplete="current-password"
             />
         </div>
-    </Box>
+        <Button variant="contained" color="success">
+            Valider
+        </Button>
+      </Box>
     </>
     
   );
