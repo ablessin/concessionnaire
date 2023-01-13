@@ -10,10 +10,6 @@ const Navigation = [
     path: "/",
   },
   {
-    title: "Achat",
-    path: "/achat",
-  },
-  {
     title: "Estimation et Vente",
     path: "/estimer",
   },
