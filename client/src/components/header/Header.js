@@ -10,17 +10,12 @@ const Navigation = [
     path: "/",
   },
   {
-    title: "Vente",
-    subtitle: [
-      {
-        text: "Estimer ma voiture",
-        path: "/estimer",
-      },
-      {
-        text: "Vendre ma voiture",
-        path: "/vendre",
-      },
-    ],
+    title: "Achat",
+    path: "/achat",
+  },
+  {
+    title: "Estimation et Vente",
+    path: "/estimer",
   },
   {
     title: "Connexion",
