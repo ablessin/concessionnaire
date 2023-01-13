@@ -180,11 +180,11 @@ function getBrands() {
       RequestResponse = JSON.parse(this.responseText);
 
       //loop through response to save brand name to an arraylist that can populate the brand select option
-      RequestResponse.map((element) => {
+      Object.keys(RequestResponse).forEach((element) => {
         const elem = [];
 
-        elem.label = element.name;
-        elem.id = element.id;
+        elem.label = RequestResponse[element].name;
+        elem.id = RequestResponse[element].id;
 
         resultList.push(elem);
       });
@@ -219,12 +219,12 @@ function getModels() {
       // console.log('Body:', this.responseText);
       RequestResponse = JSON.parse(this.responseText);
 
-      //loop through response to save brand name to an arraylist that can populate the brand select option
-      RequestResponse.map((element) => {
+      //loop through response to save model name to an arraylist that can populate the brand select option
+      Object.keys(RequestResponse).forEach((element) => {
         const elem = [];
 
-        elem.label = element.model;
-        elem.id = element.id;
+        elem.label = RequestResponse[element].model;
+        elem.id = RequestResponse[element].id;
 
         resultList.push(elem);
       });
