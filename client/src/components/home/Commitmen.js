@@ -5,11 +5,9 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Style from "./Home.module.css";
 import Typography from '@mui/material/Typography';
-import Safe from "../../assets/images/home/safe.png";
-import Transparent from "../../assets/images/home/transparent.png";
-import Respect from "../../assets/images/home/respect.png";
-import Divider from '@mui/material/Divider';
-import { style } from "@mui/system";
+import Safe from "../../assets/s/home/safe.png";
+import Transparent from "../../assets/s/home/transparent.png";
+import Respect from "../../assets/s/home/respect.png";
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -36,7 +34,7 @@ export default function Commitmen() {
                         <div className={Style.textLeft}>
                             <img
                                 src={Safe}
-                                alt="image safe"
+                                alt="safe"
                             />
                             <Typography variant="h3" gutterBottom> 
                             Sécurité
@@ -53,7 +51,7 @@ export default function Commitmen() {
                     <div className={Style.textLeft}>
                         <img
                             src={Transparent}
-                            alt="image transparent"
+                            alt="transparent"
                         />
                         <Typography variant="h3" gutterBottom> 
                         Transparence
@@ -69,7 +67,7 @@ export default function Commitmen() {
                     <div className={Style.textLeft}>
                         <img
                             src={Respect}
-                            alt="image respect"
+                            alt="respect"
                         />
                         <Typography variant="h3" gutterBottom> 
                         Respect
