@@ -13,11 +13,22 @@ const Navigation = [
     title: "Estimation et Vente",
     path: "/estimer",
   },
-  {
+  ,
+];
+
+if (window.sessionStorage.getItem("userToken")) {
+  const d = {
+    title: "Déconnexion",
+    path: "/",
+  }
+  Navigation.push(d);
+} else {
+  const c = {
     title: "Connexion",
     path: "/connexion",
-  },
-];
+  }
+  Navigation.push(c);
+}
 
 function Header() {
   return (
@@ -30,7 +41,7 @@ function Header() {
           {Navigation.map((value, index) => {
             return (
               <Link key={index} to={value.path}>
-                <MenuElement key={index} params={value}/>
+                <MenuElement key={index} params={value} />
               </Link>
             );
           })}

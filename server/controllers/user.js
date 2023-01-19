@@ -13,10 +13,6 @@ async function verify(token, req, res) {
     audience: CLIENT_ID,
   });
   const payload = ticket.getPayload();
-  //  const userid = payload['sub'];
-  //  const userid = payload.sub;
-
-  console.log(payload);
 
   User.findOne({ email: payload.email })
     .then((user) => {
@@ -56,7 +52,6 @@ async function verify(token, req, res) {
           expiresIn: "24h",
         });
         user.password = "";
-        //            user.name = payload.name;
         res.status(200).json({
           token: token,
           user: user,

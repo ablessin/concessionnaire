@@ -9,6 +9,10 @@ export default function MenuElement(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
+    if(event.currentTarget.innerText == "DÉCONNEXION"){
+      window.sessionStorage.removeItem('userToken');
+      window.location.reload();
+    }
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
