@@ -1,9 +1,9 @@
-import LoginForm from "../components/auth/LoginForm";
+import Authentication from "../components/auth/LoginForm";
 
 export default function Connexion() {
   return (
     <>
-      <LoginForm />
+      <Authentication />
     </>
   );
 }

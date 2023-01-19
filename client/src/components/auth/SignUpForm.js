@@ -6,35 +6,33 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
-import Link from "@mui/material/Link";
+import Link from '@mui/material/Link';
 
 export default function FormPropsTextFields() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  function login() {
-    const credentials = { email, password };
+  function signup() {
 
-    fetch("http://localhost:3001/api/auth/login/", {
-      method: "POST",
+    const credentials = {email, password};
+
+    fetch('http://localhost:3001/api/auth/signup/', {
+      method: 'POST',
       body: JSON.stringify(credentials),
-
+    
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    
     })
-      .then((response) => response.json())
-      .then((data) => window.sessionStorage.setItem('userToken', data.token));
-
-    window.location.replace("/");
   }
 
   return (
     <>
       <Box className={Style.title}>
         <Typography variant="h2" gutterBottom>
-          Se connecter
+          S'inscrire
         </Typography>
       </Box>
       <Box
@@ -70,10 +68,12 @@ export default function FormPropsTextFields() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <Link href="/inscription" color="inherit" sx={{ mb: 3 }}>
-          Pas de compte ? S'incrire
-        </Link>
-        <Button onClick={() => login()} variant="contained" color="success">
+        <Link href="/connexion" color="inherit" sx={{mb:3}}>Déjà un compte ? Se connecter</Link>
+        <Button
+          onClick={() => signup()}
+          variant="contained"
+          color="success"
+        >
           Valider
         </Button>
         <br />
