@@ -1,5 +1,5 @@
 import * as React from "react";
-import Style from "./Vente.module.css";
+import Style from "./Estimation.module.css";
 import dayjs from "dayjs";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
@@ -15,9 +15,10 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import Autocomplete from "@mui/material/Autocomplete";
 import Button from "@mui/material/Button";
 
-export default function VenteForm() {
+export default function EstimationForm() {
   const [value, setValue] = React.useState(dayjs());
   const [age, setAge] = React.useState("");
 
@@ -37,19 +38,19 @@ export default function VenteForm() {
       >
         <div className={Style.wrapper}>
           {/* Marque */}
-          <TextField
+          <Autocomplete
+            disablePortal
             id="marque"
-            label={"Marque"}
-            variant={"standard"}
-            type={"text"}
+            options={brandsList}
+            renderInput={(params) => <TextField {...params} label="Marque" />}
           />
 
           {/* Modele */}
-          <TextField
-            id="modele"
-            label={"Modèle"}
-            variant={"standard"}
-            type={"text"}
+          <Autocomplete
+            disablePortal
+            id="model"
+            options={modelsList}
+            renderInput={(params) => <TextField {...params} label="Modèle" />}
           />
 
           {/* Annee du modele */}
@@ -157,3 +158,82 @@ export default function VenteForm() {
     </>
   );
 }
+
+///////////////////
+// BRAND REQUEST //
+///////////////////
+function getBrands() {
+  let Request = new XMLHttpRequest();
+  let RequestResponse = [];
+  let resultList = [];
+
+  Request.open(
+    "GET",
+    "https://private-anon-8c67e65a85-carsapi1.apiary-mock.com/manufacturers"
+  );
+
+  Request.onreadystatechange = function () {
+    if (this.readyState === 4) {
+      // console.log('Status:', this.status);
+      // console.log('Headers:', this.getAllResponseHeaders());
+      // console.log('Body:', this.responseText);
+      RequestResponse = JSON.parse(this.responseText);
+
+      //loop through response to save brand name to an arraylist that can populate the brand select option
+      Object.keys(RequestResponse).forEach((element) => {
+        const elem = [];
+
+        elem.label = RequestResponse[element].name;
+        elem.id = RequestResponse[element].id;
+
+        resultList.push(elem);
+      });
+    }
+  };
+
+  Request.send();
+
+  return resultList
+}
+
+let brandsList = getBrands();
+
+
+////////////////////
+// MODELS REQUEST //
+////////////////////
+function getModels() {
+  let Request = new XMLHttpRequest();
+  let RequestResponse = [];
+  let resultList = [];
+
+  Request.open(
+    "GET",
+    "https://private-anon-8c67e65a85-carsapi1.apiary-mock.com/cars"
+  );
+
+  Request.onreadystatechange = function () {
+    if (this.readyState === 4) {
+      // console.log('Status:', this.status);
+      // console.log('Headers:', this.getAllResponseHeaders());
+      // console.log('Body:', this.responseText);
+      RequestResponse = JSON.parse(this.responseText);
+
+      //loop through response to save model name to an arraylist that can populate the brand select option
+      Object.keys(RequestResponse).forEach((element) => {
+        const elem = [];
+
+        elem.label = RequestResponse[element].model;
+        elem.id = RequestResponse[element].id;
+
+        resultList.push(elem);
+      });
+    }
+  };
+
+  Request.send();
+
+  return resultList
+}
+
+let modelsList = getModels();

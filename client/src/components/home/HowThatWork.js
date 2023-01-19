@@ -40,7 +40,7 @@ export default function HowThatWork() {
                     <Item className={Style.workCard}>
                         <img
                             src={Choice}
-                            alt="image choice"
+                            alt="choice"
                         />
                         <p className={Style.textLeft}>
                             Demande d’estimation en ligne. 1 minute maxi !
@@ -56,7 +56,7 @@ export default function HowThatWork() {
                     <Item className={Style.workCard}>
                         <img
                             src={Calendar}
-                            alt="image calendar"
+                            alt="calendar"
                         />
                         <p className={Style.textLeft}>
                             Rachats suivant la valeur proposées
@@ -72,7 +72,7 @@ export default function HowThatWork() {
                     <Item className={Style.workCard}>
                         <img
                             src={Fast}
-                            alt="image fast"
+                            alt="fast"
                         />
                         <p className={Style.textLeft}>
                             Intéressé ? Prise de RDV à votre domicile avec un expert (partout en France).
@@ -89,7 +89,7 @@ export default function HowThatWork() {
                     <Item className={Style.workCard}>
                         <img
                             src={ImmediateSale}
-                            alt="image immediate sale"
+                            alt="immediate sale"
                         />
                         <p className={Style.textLeft}>
                             Confirmation de la valeur. Prise en charge du véhicule. Vente.

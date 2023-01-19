@@ -10,21 +10,8 @@ const Navigation = [
     path: "/",
   },
   {
-    title: "Achat",
-    path: "/achat",
-  },
-  {
-    title: "Vente",
-    subtitle: [
-      {
-        text: "Estimer ma voiture",
-        path: "/estimer",
-      },
-      {
-        text: "Vendre ma voiture",
-        path: "/vendre",
-      },
-    ],
+    title: "Estimation et Vente",
+    path: "/estimer",
   },
   {
     title: "Connexion",
@@ -43,7 +30,7 @@ function Header() {
           {Navigation.map((value, index) => {
             return (
               <Link key={index} to={value.path}>
-                <MenuElement key={index} params={value} />
+                <MenuElement key={index} params={value}/>
               </Link>
             );
           })}

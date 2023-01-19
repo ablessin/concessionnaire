@@ -9,5 +9,6 @@ server/node_modules
 
 # Intellij
 .idea
+.vscode
 
 HowToLaunchServer

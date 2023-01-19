@@ -13,7 +13,7 @@ export default function Banner() {
     <Box className={Style.banner} padding={{xs:0, md:5}} >
       <Grid className={Style.title}>
       <Typography variant="h1" gutterBottom> 
-      Car Cash : Acheter, vender, estimer
+      Car Cash : Achetez, vendez, estimez
       </Typography>
       </Grid>
       <Grid className={Style.textBanner}>

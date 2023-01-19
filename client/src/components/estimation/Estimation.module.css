@@ -1,0 +1,11 @@
+.wrapper{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.wrapper div{
+    margin-top: 15px;
+}

@@ -37,10 +37,14 @@
     width: 50%;
 }
 
+.navButtons button{
+    color: #2F2F2F !important;
+}
+
 a{
     text-decoration: none;
 }
 
 .navSubitem{
-    color: #2F2F2F;
+    color: #2F2F2F !important;
 }
