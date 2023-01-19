@@ -19,12 +19,116 @@ import Autocomplete from "@mui/material/Autocomplete";
 import Button from "@mui/material/Button";
 
 export default function EstimationForm() {
-  const [value, setValue] = React.useState(dayjs());
-  const [age, setAge] = React.useState("");
+  const [fuel, setFuel] = React.useState("");
+  const [year, setYear] = React.useState(dayjs());
+  const [brand, setBrand] = React.useState("");
+  const [model, setModel] = React.useState("");
+  const [modelsList, setModelsList] = React.useState({});
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  // React.useEffect(() => {
+  //   setModelsList(getModels());
+  //   console.log("modelsList");
+  //   console.log(modelsList);
+  // }, getModels());
+
+  const handleFuelChange = (event) => {
+    setFuel(event.target.value);
   };
+
+  const handleYearChange = (event) => {
+    setYear(event.target.value);
+  };
+
+  const handleBrandChange = (event) => {
+    setBrand(event.target.innerText);
+    setModelsList(getModels());
+  };
+
+  const handleModelChange = (event) => {
+    setModel(event.target.innerText);
+  };
+
+  let brandsList = getBrands();
+
+  ///////////////////
+  // BRAND REQUEST //
+  ///////////////////
+  function getBrands() {
+    let Request = new XMLHttpRequest();
+    let RequestResponse = [];
+    let resultList = [];
+
+    Request.open(
+      "GET",
+      "https://private-anon-8c67e65a85-carsapi1.apiary-mock.com/manufacturers"
+    );
+
+    Request.onreadystatechange = function () {
+      if (this.readyState === 4) {
+        // console.log('Status:', this.status);
+        // console.log('Headers:', this.getAllResponseHeaders());
+        // console.log('Body:', this.responseText);
+        RequestResponse = JSON.parse(this.responseText);
+
+        //loop through response to save brand name to an arraylist that can populate the brand select option
+        Object.keys(RequestResponse).forEach((element) => {
+          const elem = [];
+
+          elem.label = RequestResponse[element].name;
+          elem.id = RequestResponse[element].id;
+
+          resultList.push(elem);
+        });
+      }
+    };
+
+    Request.send();
+
+    return resultList;
+  }
+
+  ////////////////////
+  // MODELS REQUEST //
+  ////////////////////
+  function getModels() {
+    let Request = new XMLHttpRequest();
+    let RequestResponse = [];
+    let resultList = [];
+
+    Request.open(
+      "GET",
+      "https://private-anon-8c67e65a85-carsapi1.apiary-mock.com/cars"
+    );
+
+    Request.onreadystatechange = function () {
+      if (this.readyState === 4) {
+        // console.log('Status:', this.status);
+        // console.log('Headers:', this.getAllResponseHeaders());
+        // console.log('Body:', this.responseText);
+        RequestResponse = JSON.parse(this.responseText);
+
+        //loop through response to save model name to an arraylist that can populate the brand select option
+        Object.keys(RequestResponse).forEach((element) => {
+          const elem = [];
+
+          elem.label = RequestResponse[element].model;
+          elem.id = RequestResponse[element].id;
+
+          console.log("brand : " + brand);
+          console.log("element : " + element.car);
+          console.log("elem : " + elem);
+
+          if (brand == element.car) {
+            resultList.push(elem);
+          }
+        });
+      }
+    };
+
+    Request.send();
+
+    return resultList;
+  }
 
   return (
     <>
@@ -34,23 +138,24 @@ export default function EstimationForm() {
           "& .MuiTextField-root": { m: 1, width: "50%" },
         }}
         noValidate
-        autoComplete="off"
+        autoComplete="on"
       >
         <div className={Style.wrapper}>
           {/* Marque */}
           <Autocomplete
-            disablePortal
             id="marque"
-            options={brandsList}
             renderInput={(params) => <TextField {...params} label="Marque" />}
+            onChange={handleBrandChange}
+            options={brandsList}
           />
 
           {/* Modele */}
           <Autocomplete
             disablePortal
             id="model"
-            options={modelsList}
             renderInput={(params) => <TextField {...params} label="Modèle" />}
+            onChange={handleModelChange}
+            options={modelsList}
           />
 
           {/* Annee du modele */}
@@ -62,9 +167,9 @@ export default function EstimationForm() {
                 label={"Année du modèle"}
                 openTo="year"
                 views={["year", "month", "day"]}
-                value={value}
-                onChange={(newValue) => {
-                  setValue(newValue);
+                value={year}
+                onChange={(newYear) => {
+                  setYear(newYear);
                 }}
                 renderInput={(params) => <TextField {...params} />}
               />
@@ -80,10 +185,8 @@ export default function EstimationForm() {
                 label={"Mise en circulation"}
                 openTo="year"
                 views={["year", "month", "day"]}
-                value={value}
-                onChange={(newValue) => {
-                  setValue(newValue);
-                }}
+                value={year}
+                onChange={handleYearChange}
                 renderInput={(params) => <TextField {...params} />}
               />
             </Stack>
@@ -103,9 +206,9 @@ export default function EstimationForm() {
             <Select
               labelId="selectCarburant"
               id="selectCarburant"
-              value={age}
+              value={fuel}
               label="Carburant"
-              onChange={handleChange}
+              onChange={handleFuelChange}
             >
               <MenuItem value={1}>Essence</MenuItem>
               <MenuItem value={2}>Diesel</MenuItem>
@@ -158,82 +261,3 @@ export default function EstimationForm() {
     </>
   );
 }
-
-///////////////////
-// BRAND REQUEST //
-///////////////////
-function getBrands() {
-  let Request = new XMLHttpRequest();
-  let RequestResponse = [];
-  let resultList = [];
-
-  Request.open(
-    "GET",
-    "https://private-anon-8c67e65a85-carsapi1.apiary-mock.com/manufacturers"
-  );
-
-  Request.onreadystatechange = function () {
-    if (this.readyState === 4) {
-      // console.log('Status:', this.status);
-      // console.log('Headers:', this.getAllResponseHeaders());
-      // console.log('Body:', this.responseText);
-      RequestResponse = JSON.parse(this.responseText);
-
-      //loop through response to save brand name to an arraylist that can populate the brand select option
-      Object.keys(RequestResponse).forEach((element) => {
-        const elem = [];
-
-        elem.label = RequestResponse[element].name;
-        elem.id = RequestResponse[element].id;
-
-        resultList.push(elem);
-      });
-    }
-  };
-
-  Request.send();
-
-  return resultList
-}
-
-let brandsList = getBrands();
-
-
-////////////////////
-// MODELS REQUEST //
-////////////////////
-function getModels() {
-  let Request = new XMLHttpRequest();
-  let RequestResponse = [];
-  let resultList = [];
-
-  Request.open(
-    "GET",
-    "https://private-anon-8c67e65a85-carsapi1.apiary-mock.com/cars"
-  );
-
-  Request.onreadystatechange = function () {
-    if (this.readyState === 4) {
-      // console.log('Status:', this.status);
-      // console.log('Headers:', this.getAllResponseHeaders());
-      // console.log('Body:', this.responseText);
-      RequestResponse = JSON.parse(this.responseText);
-
-      //loop through response to save model name to an arraylist that can populate the brand select option
-      Object.keys(RequestResponse).forEach((element) => {
-        const elem = [];
-
-        elem.label = RequestResponse[element].model;
-        elem.id = RequestResponse[element].id;
-
-        resultList.push(elem);
-      });
-    }
-  };
-
-  Request.send();
-
-  return resultList
-}
-
-let modelsList = getModels();
