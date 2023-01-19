@@ -25,12 +25,6 @@ export default function EstimationForm() {
   const [model, setModel] = React.useState("");
   const [modelsList, setModelsList] = React.useState({});
 
-  // React.useEffect(() => {
-  //   setModelsList(getModels());
-  //   console.log("modelsList");
-  //   console.log(modelsList);
-  // }, getModels());
-
   const handleFuelChange = (event) => {
     setFuel(event.target.value);
   };
@@ -65,9 +59,6 @@ export default function EstimationForm() {
 
     Request.onreadystatechange = function () {
       if (this.readyState === 4) {
-        // console.log('Status:', this.status);
-        // console.log('Headers:', this.getAllResponseHeaders());
-        // console.log('Body:', this.responseText);
         RequestResponse = JSON.parse(this.responseText);
 
         //loop through response to save brand name to an arraylist that can populate the brand select option
@@ -102,9 +93,6 @@ export default function EstimationForm() {
 
     Request.onreadystatechange = function () {
       if (this.readyState === 4) {
-        // console.log('Status:', this.status);
-        // console.log('Headers:', this.getAllResponseHeaders());
-        // console.log('Body:', this.responseText);
         RequestResponse = JSON.parse(this.responseText);
 
         //loop through response to save model name to an arraylist that can populate the brand select option
