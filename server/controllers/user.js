@@ -85,8 +85,6 @@ exports.getUser = (req, res, next) => {
 };
 
 exports.createUser = (req, res, next) => {
-  console.log("req.body");
-  console.log(req.body);
   bcrypt
     .hash(req.body.password, 10)
     .then((hash) => {
